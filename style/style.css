@@ -228,6 +228,11 @@ header .nav ul li a:hover::before {
   margin-top: 50px;
 }
 
+.formular__item {
+  width: 200px;
+  height: 200px;
+}
+
 .formular__item-text {
   display: block;
   text-align: center;
