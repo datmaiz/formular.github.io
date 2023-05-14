@@ -37,6 +37,11 @@ html {
   font-size: 16px;
 }
 
+body {
+  max-width: 100vw;
+  font-size: 16px;
+}
+
 header {
   background-image: url(../asset/backgroundHomepage.jpg);
   height: 100vh;
@@ -68,10 +73,11 @@ header .nav ul li {
 }
 
 header .nav ul li a {
-  font-size: 1.3rem;
+  font-size: 1.1em;
   color: #fff;
   font-weight: 700;
   position: relative;
+  transition: .5s;
 }
 
 header .nav ul li a:hover {
@@ -103,6 +109,7 @@ header .nav ul li a:hover::before {
 
 .header__center-title {
   text-transform: uppercase;
+  cursor: default;
 }
 
 .header__center p {
@@ -175,6 +182,7 @@ header .nav ul li a:hover::before {
   font-size: 2rem;
   text-transform: uppercase;
   font-weight: 600;
+  cursor: default;
 }
 
 .find-search {
@@ -263,6 +271,7 @@ header .nav ul li a:hover::before {
   width: 960px;
 }
 
+
 .overview__item {
   display: grid;
   text-align: center;
@@ -307,6 +316,9 @@ header .nav ul li a:hover::before {
 .top-cooker-list {
   display: flex;
   gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 }
 
 .top-cooker-item {
@@ -448,9 +460,34 @@ header .nav ul li a:hover::before {
 }
 
 .comment__button button {
-  background-color: #ff0000;
+  background-color: rgb(255, 0, 0);
   color: #fff;
   font-weight: 500;
   font-size: 1rem;
+  border: none;
+  transition: .35s linear;
 }
 
+.comment__button button:hover {
+  background-color: rgb(209, 3, 3);
+}
+
+#toTop {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  font-size: 2rem;
+  background-color: #00aedf;
+  border: none;
+  border-radius: 10px;
+  color: #fff;
+  box-shadow: 0 10px 0 0 #026480;
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+
+#toTop:active {
+  transform: translateY(10px);
+  box-shadow: none;
+}

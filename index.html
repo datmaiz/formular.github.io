@@ -205,7 +205,9 @@
             <div class="info">
               <span class="name">Như Quỳnh</span>
               <span class="text">
-                Thiết kế website đơn giản, dễ sử dụng và thân thiện với người dùng. Tất cả các công thức nấu ăn được phân loại và sắp xếp một cách rõ ràng để người dùng dễ dàng tìm kiếm.
+                Thiết kế website đơn giản, dễ sử dụng và thân thiện với người
+                dùng. Tất cả các công thức nấu ăn được phân loại và sắp xếp một
+                cách rõ ràng để người dùng dễ dàng tìm kiếm.
               </span>
             </div>
           </div>
@@ -216,7 +218,9 @@
             <div class="info">
               <span class="name">Hạ Quỳnh</span>
               <span class="text">
-                Nội dung của các công thức nấu ăn phong phú và đa dạng, cung cấp đầy đủ các thông tin cần thiết để người dùng có thể thực hiện món ăn một cách chính xác và thành công.
+                Nội dung của các công thức nấu ăn phong phú và đa dạng, cung cấp
+                đầy đủ các thông tin cần thiết để người dùng có thể thực hiện
+                món ăn một cách chính xác và thành công.
               </span>
             </div>
           </div>
@@ -226,15 +230,41 @@
     <div class="comment">
       <div class="comment__container">
         <div class="comment__name">
-          <input type="text" placeholder="Họ Và Tên:">
+          <input type="text" placeholder="Họ Và Tên:" />
         </div>
         <div class="comment__evaluate">
-          <textarea name="" id="" cols="30" rows="5" placeholder="Để lại nhận xét của bạn"></textarea>
+          <textarea
+            name=""
+            id=""
+            cols="30"
+            rows="5"
+            placeholder="Để lại nhận xét của bạn"
+          ></textarea>
         </div>
         <div class="comment__button">
           <button>Nhận xét</button>
         </div>
       </div>
     </div>
+    <button id="toTop"><i class="fa-solid fa-arrow-up"></i></button>
+
+    <!-- scripts for scroll to top -->
+    <script>
+      let toTop = document.getElementById("toTop");
+      toTop.style.display = "none";
+      window.addEventListener("scroll", () => {
+        if (this.scrollY > 500) {
+          toTop.style.display = "block";
+        } else {
+          toTop.style.display = "none";
+        }
+      });
+      toTop.onclick = function () {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
+      };
+    </script>
   </body>
 </html>
