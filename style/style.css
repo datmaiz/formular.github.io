@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Oswald&family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Press+Start+2P&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
-
+/* reset css */
 * {
   padding: 0;
   margin: 0;
@@ -41,22 +41,30 @@ body {
   max-width: 100vw;
   font-size: 16px;
 }
-
+/* header's style */
 header {
+  background-repeat: no-repeat;
   background-image: url(../asset/backgroundHomepage.jpg);
+  /* background-position: 20% 50%; */
+  background-size: cover;
   height: 100vh;
   color: #fff;
-  display: flex;
+  /* display: flex;
   align-items: center;
-  flex-direction: column;
-  padding-inline: 200px;
-  padding-top: 10px;
+  justify-content: space-evenly;
+  flex-direction: column; */
+  width: 100%;
+  overflow: hidden;
+  /* padding-top: 10px; */
 }
 
 .header-nav {
   display: flex;
   justify-content: space-between;
   width: 100%;
+  max-width: 1300px;
+  height: 10%;
+  margin: 0 auto;
 }
 
 header .nav ul {
@@ -77,7 +85,8 @@ header .nav ul li a {
   color: #fff;
   font-weight: 700;
   position: relative;
-  transition: .5s;
+  transition: 0.5s;
+  text-transform: uppercase;
 }
 
 header .nav ul li a:hover {
@@ -92,12 +101,25 @@ header .nav ul li a::before {
   content: " ";
   bottom: 0;
   left: 50%;
-  transition: 0.5s;
+  transition: 0.5s ease-in-out;
 }
 
 header .nav ul li a:hover::before {
   left: 0;
   width: 100%;
+  transition: 0.5s ease-in-out;
+}
+
+.header-nav-left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-nav-right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .header__center {
@@ -105,6 +127,7 @@ header .nav ul li a:hover::before {
   width: 100%;
   margin-top: 200px;
   margin-right: 250px;
+  max-width: 90%;
 }
 
 .header__center-title {
@@ -144,20 +167,131 @@ header .nav ul li a:hover::before {
 .header__center button:hover {
   box-shadow: 0 0 12px 5px #fff;
 }
+/* style for icon menu left */
+.header-nav-left-menus {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+  height: 80px;
+  cursor: pointer;
+  transition: .25s;
+  z-index: 6;
+}
+
+.header-nav-left-menu {
+  width: 45px;
+  height: 6px;
+  background-color: #fff;
+  border-radius: 5px;
+  transition: .25s;
+  position: relative;
+}
+
+.header-nav-left-menu:before,
+.header-nav-left-menu:after {
+  content: "";
+  position: absolute;
+  width: 45px;
+  height: 6px;
+  background-color: #fff;
+  border-radius: 5px;
+  transition: .25s;
+}
+
+.header-nav-left-menu:before {
+  transform: translateY(-12px);
+}
+
+.header-nav-left-menu:after {
+  transform: translateY(12px);
+}
+/* style for icon menu right */
+.header-nav-right-menus {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+  height: 80px;
+  cursor: pointer;
+  transition: .25s;
+  z-index: 6;
+}
+
+.header-nav-right-menu {
+  width: 45px;
+  height: 6px;
+  background-color: #fff;
+  border-radius: 5px;
+  transition: .25s;
+  position: relative;
+}
+
+.header-nav-right-menu:before,
+.header-nav-right-menu:after {
+  content: "";
+  position: absolute;
+  width: 45px;
+  height: 6px;
+  background-color: #fff;
+  border-radius: 5px;
+  transition: .25s;
+}
+
+.header-nav-right-menu:before {
+  transform: translateY(-12px);
+}
+
+.header-nav-right-menu:after {
+  transform: translateY(12px);
+}
+
+/* button aimation */
+.open .header-nav-left-menu {
+  transform: translateX(-50px);
+  background: transparent;
+}
+
+.open .header-nav-left-menu:before {
+  transform: rotate(45deg) translate(35px, -35px);
+}
+
+.open .header-nav-left-menu:after {
+  transform: rotate(-45deg) translate(35px, 35px);
+}
+
+.open .header-nav-right-menu {
+  transform: translateX(50px);
+  background: transparent;
+}
+
+.open .header-nav-right-menu:before {
+  transform: rotate(45deg) translate(-35px, 35px);
+}
+
+.open .header-nav-right-menu:after {
+  transform: rotate(-45deg) translate(-35px, -35px);
+}
 
 .header__footer {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  position: absolute;
+  bottom: 20px;
   margin-top: 200px;
   background-color: rgba(0, 0, 0, 0.5);
   padding-block: 10px;
   border-radius: 12px;
   gap: 20px;
+  text-align: center;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .header__footer-item {
   display: flex;
   flex-direction: column;
+  width: 400px;
 }
 
 .header__footer-item h1 {
@@ -171,6 +305,7 @@ header .nav ul li a:hover::before {
   align-items: center;
   padding: 50px;
   text-align: center;
+  margin-top: 50px;
 }
 
 .find-container {
@@ -228,7 +363,8 @@ header .nav ul li a:hover::before {
 }
 
 .formular__container {
-  width: 960px;
+  max-width: 960px;
+  width: 100%;
   margin: 0 auto;
   display: grid;
   gap: 50px 100px;
@@ -237,8 +373,9 @@ header .nav ul li a:hover::before {
 }
 
 .formular__item {
-  width: 200px;
+  width: 100%;
   height: 200px;
+  text-align: center;
 }
 
 .formular__item-text {
@@ -247,8 +384,9 @@ header .nav ul li a:hover::before {
 }
 
 .img {
-  width: 200px;
+  width: 100%;
   height: 200px;
+  text-align: center;
 }
 
 .img img {
@@ -268,15 +406,21 @@ header .nav ul li a:hover::before {
 .overview__container {
   display: flex;
   margin: 0 auto;
-  width: 960px;
+  max-width: 960px;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
-
 .overview__item {
-  display: grid;
+  /* display: grid;
   text-align: center;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); */
   color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   padding-block: 100px;
 }
 
@@ -402,7 +546,7 @@ header .nav ul li a:hover::before {
   justify-content: center;
   max-width: 960px;
   width: 100%;
-  gap: 0 20px;
+  gap: 20px;
   flex-wrap: wrap;
   margin-top: 20px;
 }
@@ -445,7 +589,7 @@ header .nav ul li a:hover::before {
   align-items: center;
   flex-direction: column;
   width: 400px;
-  gap: 20px 0;
+  gap: 20px;
 }
 
 .comment__container > * {
@@ -465,13 +609,13 @@ header .nav ul li a:hover::before {
   font-weight: 500;
   font-size: 1rem;
   border: none;
-  transition: .35s linear;
+  transition: 0.35s linear;
 }
 
 .comment__button button:hover {
   background-color: rgb(209, 3, 3);
 }
-
+/* style for button scroll to top */
 #toTop {
   position: fixed;
   bottom: 20px;
@@ -490,4 +634,83 @@ header .nav ul li a:hover::before {
 #toTop:active {
   transform: translateY(10px);
   box-shadow: none;
+}
+
+@media screen and (max-width: 1360px) {
+  .header-nav-right {
+    position: fixed;
+    top: 100px;
+    right: 0;
+    width: 60%;
+    transform: translateX(100%);
+    transition: .25s linear;
+    z-index: 2;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    padding-block: 10px;
+    opacity: 0;
+  }
+  .header-nav-right ul {
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    margin-left: 50px;
+  }
+  .header-nav-right ul li a {
+    display: inline-block;
+    margin-left: 20px;
+  }
+  .header-nav-right-menus {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .header-nav-right.open {
+    transform: translateX(0);
+    transition: .25s linear;
+    opacity: 1;
+  }
+  header .nav.header-nav-right ul li a {
+    text-transform: unset;
+    opacity: 1;
+  }
+}
+
+@media screen and (max-width: 580px) {
+  .header-nav-left {
+    /* display: none; */
+    opacity: 0;
+    position: fixed;
+    left: 0;
+    width: 60%;
+    top: 100px;
+    transform: translateX (-100%);
+    transition: .25s linear;
+    z-index: 2;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    padding-block: 10px;
+  }
+  .header-nav-left ul {
+    width: 100%;
+    margin-left: 20px;
+    gap: 20px;
+  }
+  .header-nav-left-menus {
+    display: flex;
+  }
+  .header-nav-left ul {
+    flex-direction: column;
+  }
+  .header-nav-right ul {
+    margin-left: 10px;
+  }
+  header .nav.header-nav-left ul li a {
+    text-transform: unset;
+  }
+  .header-nav-left.open {
+    transform: translate(0);
+    transition: .25s linear;
+    opacity: 1;
+  }
 }

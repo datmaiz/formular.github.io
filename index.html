@@ -16,22 +16,29 @@
     />
   </head>
   <body>
+    <!-- header include nav -->
     <header>
       <div class="header-nav">
         <div class="nav header-nav-left">
           <ul>
-            <li><a href="">HOME</a></li>
-            <li><a href="">CÔNG THỨC</a></li>
-            <li><a href="">ĐÁNH GIÁ</a></li>
-            <li><a href="">TÌM MÓN</a></li>
+            <li><a href="">Home</a></li>
+            <li><a href="">Công thức</a></li>
+            <li><a href="">Đánh giá</a></li>
+            <li><a href="">Tìm món</a></li>
           </ul>
         </div>
+        <div class="header-nav-left-menus">
+          <div class="header-nav-left-menu"></div>
+        </div>
         <div class="nav header-nav-right">
-          <ul>
-            <li><a href="">ĐĂNG CÔNG THỨC</a></li>
-            <li><a href="">ĐĂNG NHẬP</a></li>
-            <li><a href="">ĐĂNG KÍ</a></li>
+            <ul>
+            <li><a href="">Đăng công thức</a></li>
+            <li><a href="">Đăng nhập</a></li>
+            <li><a href="">Đăng kí</a></li>
           </ul>
+        </div>
+        <div class="header-nav-right-menus">
+          <div class="header-nav-right-menu"></div>
         </div>
       </div>
       <div class="header__center">
@@ -54,6 +61,7 @@
         </div>
       </div>
     </header>
+    <!-- find formular -->
     <div class="find">
       <div class="find-container">
         <div class="find__title">tìm kiếm công thức món ăn</div>
@@ -63,6 +71,7 @@
         </div>
       </div>
     </div>
+    <!-- list of formular -->
     <div class="formular">
       <div class="formular__title">công thức phổ biến</div>
       <div class="formular__container">
@@ -104,6 +113,7 @@
         </div>
       </div>
     </div>
+    <!-- some info website -->
     <div class="overview">
       <div class="overview__container">
         <div class="overview__item">
@@ -128,6 +138,7 @@
         </div>
       </div>
     </div>
+    <!-- list top cooker -->
     <div class="top-cooker">
       <div class="top-cooker-container">
         <div class="top-cooker-title">top đầu bếp</div>
@@ -171,6 +182,7 @@
         </div>
       </div>
     </div>
+    <!-- evaluate form user -->
     <div class="evaluate">
       <div class="evaluate__container">
         <div class="evaluate__title">đánh giá</div>
@@ -227,6 +239,7 @@
         </div>
       </div>
     </div>
+    <!-- give some comments -->
     <div class="comment">
       <div class="comment__container">
         <div class="comment__name">
@@ -255,7 +268,8 @@
       window.addEventListener("scroll", () => {
         if (this.scrollY > 500) {
           toTop.style.display = "block";
-        } else {
+        } 
+        else {
           toTop.style.display = "none";
         }
       });
@@ -266,5 +280,7 @@
         });
       };
     </script>
+    <!-- source scripts -->
+    <script src="./app/homepage.js"></script>
   </body>
 </html>
